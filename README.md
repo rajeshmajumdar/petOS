@@ -10,12 +10,12 @@ As I keep on learning, I will keep updating the README page with necessary code.
 - [Vim](https://www.vim.org/)
 
 ### Progress
-[x] Lauched boot sequence
-[x] Switched to TTY mode and printed some characters.
-[x] Loops and functions.
-[x] Learned about segmentations.
-[x] Implementing stack
-[ ] Switching from Real to Protected mode.
+- [x] Lauched boot sequence
+- [x] Switched to TTY mode and printed some characters.
+- [x] Loops and functions.
+- [x] Learned about segmentations.
+- [x] Implementing stack
+- [ ] Switching from Real to Protected mode.
 
 ### Resources
 - [osdev.wiki](https://wiki.osdev.org)
