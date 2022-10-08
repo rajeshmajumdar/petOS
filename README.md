@@ -2,7 +2,7 @@
 
 This live repo contains the code of my petOS. I don't intend to make this OS anything useful, the whole intention behind this project is to learn OS Development.
 
-As I keep on learning, I will keep updating the README page with necessary code.
+As I keep on learning, I will keep updating the README page with necessary code. I am also keeping track of the dev logs, refer to dev-log for more detailed learning process.
 
 ### Tools
 - [NASM](https://nasm.us)
@@ -17,6 +17,7 @@ As I keep on learning, I will keep updating the README page with necessary code.
 - [x] Implementing stack.
 - [x] Switching from Real to Protected mode.
 - [x] Print a welcome message in PM.
+- [ ] Cross compiler.
 - [ ] Finally jumping to kernel.
 
 ### Resources
