@@ -17,8 +17,10 @@ As I keep on learning, I will keep updating the README page with necessary code.
 - [x] Implementing stack.
 - [x] Switching from Real to Protected mode.
 - [x] Print a welcome message in PM.
-- [ ] Cross compiler.
-- [ ] Finally jumping to kernel.
+- [x] Cross compiler.
+- [x] Finally jumping to kernel.
+- [ ] Understand about interrupts, externs and %include.
+- [ ] Write a kernel.
 
 ### Resources
 - [osdev.wiki](https://wiki.osdev.org)
