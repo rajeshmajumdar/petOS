@@ -113,6 +113,23 @@ We're pretty much doing the same as earlier with some minimal changes, let me go
 Here is one more opcodes for you to play with, `0x16` to wait for the user input from keyboard, it automatically stores the character into the `al` register so one less instruction to write. You can play with more opcodes and ascii characters. Refer to wikipedia and some good ascii table on the web for references.
 
 ### Exercise
-Build a REPL.
+1. Build a REPL.
 
 That's it for Day 1, next day hopefully tomorrow we will finally be switching to 32-bit Protected mode and say goodbye to these fun interrupts, and finally we complete the first stage.
+
+### Day 2 - More mess to organise with GDT.
+
+First thing that comes to mind when we here the word Protected mode and Real mode, is wtf is this mode? And why would we switch to protected mode where we can't use these fun interrupts calls anymore, and no there aren't much funny instructions there. Well the first reason that comes to mind is more memory, 16-bit means 2^16 i.e. 54kB of memory that's nothing if we wanna write an OS, so 32-bit means 2^32 i.e. 4GB of memory, now that's enough to build a fully functional OS. Umm! pretty much it, I can think of right now. By switching to protected mode we get access to more memory and well more space to play with.
+
+Now that's out of the way, what the fuck is GDT now? Well GDT stands for `Global Descriptor Table`. Ok, if you ever programmed in assembly before you should have found something odd with the code we have written so far, there are no .data or .text sections here. In memory both data and code are the same, so it is a good practice to organise these two in a orderly fashion. That's why we have GDT, GDT is a table in which we describe a certain part of a memory .data and another one .code and give some privileges depending on the use case. For e.g. data in .data segment doesn't need to be executable, and data in .code segment doesn't need to be writable. So using GDT we describe certain part of the memory and give some special priviliges to that.
+So in future when we write code with constants and variables our memory doesn't become a total mess.
+
+If you wanna look at the caveat, if we don't have the GDT. In the previous program, where we store a string and use loop to print that string. In the code we have our variable and the end of everything just before the padding and magic byte, try moving that variable to the very top. And suddenly everything is fucked up and our OS isn't printing anything.
+
+That's why we need a GDT to organise variables, constants and our code seperately in the memory, to not encounter such errors.
+
+- Now the question is, how do we do that?
+Well we use flags, that's the beauty of low-level programming there isn't much calling, setting and writing .conf files, it's just simple flags. You move a byte to somewhere and each bit of that byte is a flag representing a trait of that section. Now at first it seemed very confusing to me, I had do much googling here, to understand. But I encourage you to do the same before looking at my explaination, on the way you'd learn much more. 
+
+### Day 3 - Cross compiler: The archnemesis
+I wasted an whole day trying to build a cross-compiler for my host and target system. Before this project, I never had the need to build any kind of cross-compilation toolchain and this is the first time I am even trying to build anything from scratch. I always had `brew` or `apt` to my rescue but this time I had to do everything on my own. On top of that, my host is macOS which is another story in itself. It does gives you the flavor of linux but at the end it is based on BSD and shitty apple decisions. You would quickly realise the pain of owning a mac. Still there are people on the web who have found some workaround, I tried to replicate there process and well I simply couldn't. So in the end, I accepted my defeat and lauched a debian instance on the cloud. And well then it's pretty easy. Now I have to `ssh` to build and `scp` back to my system to test on `qemu`. Not very efficient, but that's the easiest alternative I could think of, instead of spinning a whole new virtual machine, and doing some shared disk shit which honestly I am not sure how it's done in a mac and I don't wanna fight again with mac. Still I will keep trying to find ways to run this on my mac someday, I can't always pay some big corporations my bucks just to compile some piece of code. Till then I am gonna roll this the instance only.

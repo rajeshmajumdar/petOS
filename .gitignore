@@ -1,1 +1,4 @@
 *.bin
+*.o
+.DS_Store
+toolchain/*
