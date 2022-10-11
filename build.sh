@@ -1,3 +1,6 @@
+# This code could've bee much better, but I am not a shbang user. And I don't wanna focus on this part just yet.
+# So I just made it, for the ease of use. If anyone feeling adventurous could raise a PR and fix this.
+
 echo "Building kernel..."
 $HOME/Desktop/Projects/os/toolchain/i686-elf/bin/i686-elf-gcc -ffreestanding -m32 -g -c "kernel.cpp" -o "kernel.o"
 nasm "kernel_entry.asm" -f elf -o "kernel_entry.o"
