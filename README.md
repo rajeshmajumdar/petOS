@@ -8,7 +8,7 @@ As I keep on learning, I will keep updating the README page with necessary code.
 - [NASM](https://nasm.us)
 - [QEMU](https://qemu.org)
 - [Vim](https://www.vim.org/)
-- [Cross-compiler](https://github.com/rajeshmajumdar/toolchain)
+- [Cross-compiler](https://github.com/rajeshmajumdar/cross-compiler-toolchain)
 
 ### Progress
 - [x] Lauched from boot sector.
