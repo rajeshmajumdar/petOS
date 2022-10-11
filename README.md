@@ -4,10 +4,11 @@ This live repo contains the code of my petOS. I don't intend to make this OS any
 
 As I keep on learning, I will keep updating the README page with necessary code. I am also keeping track of the dev logs, refer to dev-log for more detailed learning process.
 
-### Tools
+### Tools I am using
 - [NASM](https://nasm.us)
 - [QEMU](https://qemu.org)
 - [Vim](https://www.vim.org/)
+- [Cross-compiler](https://github.com/rajeshmajumdar/toolchain)
 
 ### Progress
 - [x] Lauched from boot sector.
