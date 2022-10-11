@@ -1,4 +1,5 @@
 [org 0x7c00]
+[bits 16]
 KERNEL_LOCATION equ 0x1000
 
 BOOT_DISK: db 0
@@ -43,14 +44,14 @@ GDT_start:
         dw 0xffff
         dw 0
         db 0
-        db 0b10011010
+        db 0b10011010 ; Setting up the flags to make it non-writable and executable.
         db 0b11001111
         db 0
     GDT_data:
         dw 0xffff
         dw 0
         db 0
-        db 0b10010010
+        db 0b10010010 ; Setting up the flags to make it writable and readable but not executable.
         db 0b11001111
         db 0
 GDT_end:
@@ -59,7 +60,7 @@ GDT_descriptor:
     dw GDT_end - GDT_start - 1
     dd GDT_start
 
-[bits 32]
+[bits 32] ; here we enter PM, so we can use 32-bit instructions here.
 start_protected_mode:
     mov ax, DATA_SEG
     mov ds, ax

@@ -14,6 +14,7 @@ As I keep on learning, I will keep updating the README page with necessary code.
 - [x] Switched to TTY mode and printed some characters.
 - [x] Loops and functions.
 - [x] Learned about segmentations.
+- [x] Implementing bare memory-management.
 - [x] Implementing stack.
 - [x] Switching from Real to Protected mode.
 - [x] Print a welcome message in PM.
@@ -24,3 +25,4 @@ As I keep on learning, I will keep updating the README page with necessary code.
 
 ### Resources
 - [osdev.wiki](https://wiki.osdev.org)
+- [osdever.net](http://www.osdever.net)

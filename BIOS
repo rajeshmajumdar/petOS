@@ -1,0 +1,9 @@
+How the BIOS finds an OS?
+
+- Legacy Booting
+    - BIOS loads the first sector of each bootable device into memory at location 0x7c00.
+    - BIOS checks for a 0xaa55 signature
+    - It found it, it starts executing it.
+- EFI
+    - BIOS looks into special EFI partitions.
+    - OS must be compiled as an EFI program.

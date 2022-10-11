@@ -8,7 +8,7 @@ $HOME/Desktop/Projects/os/toolchain/i686-elf/bin/i686-elf-ld -o "kernel.bin" -Tt
 echo "Building bootloader..."
 nasm "bootloader.asm" -f bin -o "bootloader.bin"
 
-echo "Combining bootloader and kernel..."
+echo "Linking bootloader with kernel..."
 cat "bootloader.bin" "kernel.bin" > "petOS.bin"
 
 echo "Starting QEMU..."
